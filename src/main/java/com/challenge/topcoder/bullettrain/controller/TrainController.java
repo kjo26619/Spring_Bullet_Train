@@ -32,13 +32,7 @@ public class TrainController {
         if(_DEBUG_) { System.out.println("Get Mapping Not /trains"); }
         throw new HandlerNotFoundException("invalid endpoint");
     }
-
-    @GetMapping("/trains/**")
-    public ModelAndView noTrainsMappingFound() throws HandlerNotFoundException {
-        if(_DEBUG_) { System.out.println("Get Mapping Not /trains/**"); }
-        throw new HandlerNotFoundException("invalid endpoint");
-    }
-
+    
     @GetMapping("/trains")
     public ResponseEntity<List<TrainEntity>> getAllTrains(@RequestParam(required = false) String name,
                                                           @RequestParam(required = false) String amenities) {
